@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script>
+window.goatcounter = {
+  user_vars: {
+    screen: window.innerWidth + "x" + window.innerHeight
+  }
+};
+</script>
+<meta charset="UTF-8">
+<title>Zu Streckenkarte Hendrik A.</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  background: url("Moewe_head_focus(1).jpg") no-repeat center center;
+  background-size: contain; /* GANZES Bild sichtbar */
+  background-color: #000;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+/* BOX */
+.box {
+  margin-right: 5%;
+  background: rgba(255, 230, 120, 0.9);
+  padding: 25px 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 300px;
+}
+
+h1 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+#countdown {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+/* LADEBALKEN */
+.progress {
+  width: 100%;
+  height: 8px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 100%;
+  background: #666;
+  transition: width 1s linear;
+}
+
+/* LINK */
+a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Automatische Weiterleitung zu meiner Streckenkarte in:</h1>
+  <div id="countdown">3</div>
+
+  <div class="progress">
+    <div class="progress-bar" id="bar"></div>
+  </div>
+
+  <a rel="me" href="https://zug.network/@henecal">
+    Zurück zu zug.network
+  </a>
+</div>
+
+<script>
+let timeLeft = 3;
+const el = document.getElementById("countdown");
+const bar = document.getElementById("bar");
+
+const interval = setInterval(() => {
+  timeLeft--;
+  el.textContent = timeLeft;
+
+  bar.style.width = (timeLeft / 3 * 100) + "%";
+
+  if (timeLeft <= 0) {
+    clearInterval(interval);
+    window.location.href = "https://www.bahnbubble.eu/u/Baureihe218";
+  }
+}, 1000);
+</script>
+<script data-goatcounter="https://inselhendrik.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
+
+
+
